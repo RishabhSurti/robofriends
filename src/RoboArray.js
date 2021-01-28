@@ -1,12 +1,10 @@
-import React, { Component } from "react"
+import React from "react"
 // import  { robots } from "./robots.js"
 import Card from "./Card"
 
-class RoboArray extends Component{
-  render(){
-    const {robots} = this.props;
-    const robolist = robots.map((user, i) =>{
-      return(<Card id={robots[i].id} name = {robots[i].name} email = {robots[i].email} />);
+const RoboArray = ({robots}) => {
+    const robolist = robots.map(user =>{
+      return(<Card key={user.id} id={user.id} name = {user.name} email = {user.email} />);
     } )
     return(
       <div>
@@ -14,6 +12,5 @@ class RoboArray extends Component{
       </div>
     );
   }
-}
 
 export default RoboArray;
